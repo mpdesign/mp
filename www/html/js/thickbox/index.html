@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery 弹出层插件 ThickBox 多功能弹出层插件支持图片、ajax、内嵌内容弹等</title>
+<style type="text/css" media="all">
+*{padding:0;margin:0;list-style-type:none;} 
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif;color:#333;}
+a{color:#ff6600;text-decoration:underline;}
+/* pageContent */
+#pageContent{margin:0 auto;width:800px;}
+#pageContent h2{font-size:14px;margin:40px 0 0 0;height:28px;line-height:28px;background:#eee;border:solid 1px #ddd;padding:0 10px;color:#3366cc;}
+#pageContent h5{font-size:12px;}
+.anchor{background:#f8f8f8;padding:10px 20px;border-width:1px;border-style:solid;border-color:#eeeeee #dddddd #dddddd #dddddd;}
+.anchor ul{padding:0px 15px 0 16px;}
+.anchor ul li{list-style:circle inside;padding:2px 0;}
+.anchor p{padding:5px 15px 15px 15px;}
+</style>
+<link type="text/css" href="css/thickbox.css" rel="stylesheet" />
+<script type="text/javascript" src="http://www.mailuke.com/js/jquery-1.2.6.pack.js"></script>
+<script type="text/javascript" src="js/thickbox.js"></script>
+</head>
+
+<body>
+
+	<div id="pageContent">
+		
+		<h2>一、一张图片演示</h2>
+		<div class="anchor">
+			<h5>描述:</h5>
+			<p>这是ThickBox的一个简单实例，这个例子展示了在中放置一张图片（请看演示）。</p>
+			<h5>说明:</h5>
+			<ul>
+				<li>创建一个link元素 (&lt;a href&gt;)</li>
+				<li>给创建的这个link元素一个class属性，其值是：thickbox (class=&quot;thickbox&quot;)</li>
+				<li>在href属性中指定一个张图片地址(.jpg .jpeg .png .gif .bmp)</li>
+			</ul>
+		</div>
+		<div class="anchor">
+			<h5>点击图片查看效果:</h5>
+			<p><a href="http://www.jsfoot.com/d/file/jquery/items/2011-08-28/598271bc3a3f325a0a1476b1ec18753d.jpg" title="jquery 图片放大镜 图片类似放大镜效果鼠标滑过小图异步加载中图、大图" class="thickbox"><img width="150" height="150" alt="jquery 图片放大镜 图片类似放大镜效果鼠标滑过小图异步加载中图、大图" src="http://www.jsfoot.com/d/file/jquery/items/2011-08-28/small598271bc3a3f325a0a1476b1ec18753d.jpg" /></a></p>
+		</div>
+		
+		<!--demo1 end-->
+		
+		
+		<h2>二、多张图片演示</h2>
+		<div class="anchor">
+			<h5>描述:</h5>
+			<p>这个例子和单张图片差不多，但他允许使用rel属性使多张图片成为一组，在ThickBox里导航。这种完美的使用方法适用于图片集。</p>
+			<h5>使用说明:</h5>
+			<ul>
+				<li>创建一个link元素 (&lt;a href&gt;)</li>
+				<li>给创建的这个link元素一个class属性，其值是：thickbox; (class=&quot;thickbox&quot;)</li>
+				<li>在href属性中指定一个张图片地址 (.jpg .jpeg .png .gif .bmp)</li>
+				<li>给每一个link元素一个相同的rel值。（比如：rel=&quot;gallery-plants&quot;）</li>
+			</ul>
+			<h5>重点提醒:</h5>
+			<p>当你打开一个ThickBox图片集的时候, 你能通过键盘的左右箭头键向前和向前和向后导航（在 ThickBox 里也提供了Next和Previous的链接）。 图片将会在图片集中按HTML文档流程从第一张显示到最后一张。</p>
+		</div>
+		<div class="anchor">
+			<h5>点击一张图片:</h5>
+			<p>
+				<a href="http://www.jsfoot.com/d/file/jquery/items/2011-08-25/f23be4d33f61fda6d1769258ba6f48fb.jpg" title="jquery 文字连续滚动 节奏感十足的齿轮式滚动图片展示与文字内容特效展示" class="thickbox" rel="gallery-plants"><img width="150" height="150" alt="jquery 文字连续滚动 节奏感十足的齿轮式滚动图片展示与文字内容特效展示" src="http://www.jsfoot.com/d/file/jquery/items/2011-08-25/smallf23be4d33f61fda6d1769258ba6f48fb.jpg" /></a>
+				<a href="http://www.jsfoot.com/d/file/jquery/items/2011-08-26/f16b49d4849ce225d66900ed23367f74.jpg" title="jquery Xslider 插件焦点图片特效图片淡隐淡现、图片上下滚动、图片左右滚动、选项卡" class="thickbox" rel="gallery-plants"><img width="150" height="150" alt="jquery Xslider 插件焦点图片特效图片淡隐淡现、图片上下滚动、图片左右滚动、选项卡" src="http://www.jsfoot.com/d/file/jquery/items/2011-08-26/smallf16b49d4849ce225d66900ed23367f74.jpg" /></a>
+				<a href="http://www.jsfoot.com/d/file/jquery/items/2011-08-22/7ddbab9b843720f72356b9782146345a.jpg" title="jquery菜单特效 鼠标滑过菜单区域图标和文本类似flash动画酷炫移动展示" class="thickbox" rel="gallery-plants"><img width="150" height="150" alt="jquery菜单特效 鼠标滑过菜单区域图标和文本类似flash动画酷炫移动展示" src="http://www.jsfoot.com/d/file/jquery/items/2011-08-22/small7ddbab9b843720f72356b9782146345a.jpg" /></a>
+				<a href="http://www.jsfoot.com/d/file/jquery/items/2011-08-13/323ce4b13f72648e096bd1a86cba762a.jpg" title="jquery 图片特效用CSS3和HTML5制作仿动画头条报纸缩小到放大翻转图片展示" class="thickbox" rel="gallery-plants"><img width="150" height="150" alt="jquery 图片特效用CSS3和HTML5制作仿动画头条报纸缩小到放大翻转图片展示" src="http://www.jsfoot.com/d/file/jquery/items/2011-08-13/small323ce4b13f72648e096bd1a86cba762a.jpg" /></a>
+			</p>
+		</div>
+		
+		<!--demo2 end-->
+	
+	
+		<h2>三、内嵌内容演示</h2>
+		<div class="anchor">
+			<h5>描述:</h5>
+			<p>页面中的内嵌内容，隐藏的或是显示的均可以放置在ThickBox中。</p>
+			<h5>使用说明:</h5>
+			<ul>
+				<li>创建一个link元素(&lt;a href&gt;)</li>
+				<li>给创建的这个link元素一个class属性，其值是：thickbox (class=&quot;thickbox&quot;)</li>
+				<li>给link元素的href属性设置为: #TB_inline</li>
+				<li>在href属性的值#TB_inlineIn后面追加一下字符: <pre class="exampleCode"><code class="html">?height=300&amp;width=300&amp;inlineId=myOnPageContent</code></pre></li>
+				<li>根据你的实际需要更改height, width, 和 inlineId的值（这里的inlineID就是包含你想显示在ThickBox上的内容的容器的id）。</li>
+				<li>当然你也可以在参数字符串中加 modal=true(比如. #TB_inline?height=155&amp;width=300&amp;inlineId=hiddenModalContent&amp;modal=true) 这样当关闭ThickBox时会调用ThickBox内部的一个tb_remove()函数。在演示中查看“显示隐藏模式的内容”则要求点击yes 或 no才能关闭ThickBox。</li>
+			</ul>
+			<h5>重点提醒:</h5>
+			<p>如果内嵌在ThickBox的内容多于ThickBox显示的尺寸，一个滚动条会出现。请确认ThickBox的尺寸和内容的匹配避免出现滚动条而显示全部内嵌内容。也就是说，如果不想要滚动条，你可以增加ThickBox的宽和高直到内嵌的内容不需要滚动条就能全部显示。</p>
+		</div>
+		<div class="anchor">
+			<p style="padding-top:10px">
+				<input alt="#TB_inline?height=150&amp;width=400&amp;inlineId=myOnPageContent" title="添加一个标题”title”属性 / 或空白" class="thickbox" type="button" value="显示" />
+				
+				点击“显示”按钮后，将在中看到下面的一段文字以及那个写了”测试“的input，或是点击
+				
+				<a href="#TB_inline?height=155&amp;width=300&amp;inlineId=hiddenModalContent&amp;modal=true" class="thickbox">显示隐藏模式的内容</a>
+				
+				&nbsp;则显示在本文档中隐藏起来id为“hiddenModalContent”的div内的内容
+			</p>
+			
+			<div id="myOnPageContent">
+				<p style="background:#fff;color:#333;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+			</div>
+			
+			<div id="hiddenModalContent" style="display:none">
+			<p>这是隐藏起来的文本，现在你看到了。Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+			<p style="text-align:center"><input type="submit" id="Login" value="&nbsp;&nbsp;Ok&nbsp;&nbsp;" onclick="tb_remove()" /></p>
+			</div>
+			
+		</div>
+		
+		<!--demo3 end-->
+	
+	
+		<h2>四、iFramed 内容</h2>
+		<div class="anchor">
+			<h5>描述:</h5>
+			<p>在ThickBox中打开被 iFramed URL.哈, 这正 <a href="http://www.jsfoot.com/">Greybox</a>的功能.在打开URL的ThickBox iframe的内部. 是的,这是<a href="http://www.jsfoot.com/">Greybox</a> 功能.</p>
+			<h5>使用说明:</h5>
+			<ul>
+				<li>创建一个link元素 (&lt;a href&gt;)</li>
+				<li>给创建的这个link元素一个class属性，其值是：thickbox (class=&quot;thickbox&quot;)</li>
+				<li>给link元素的href属性指向一个你希望在ThickBox显示的URL。</li>
+				<li>href属性的URL后面追加上以下字符参数： <pre class="exampleCode"><code class="html">?KeepThis=true&amp;TB_iframe=true&amp;height=400&amp;width=600</code></pre></li>
+				<li>根据你的实际需要改变上面的参数字符。</li>
+				<li>当然你也可以在参数字符串中加 modal=true<br/>(比如：?KeepThis=true&amp;TB_iframe=true&amp;height=400&amp;width=600&amp;modal=true)  这样当关闭ThickBox时会调用ThickBox iframe (self.parent.tb_remove())内部的一个tb_remove()函数。在演示中查看“打开iFrame Modal的演示”则要求点击ok才能关闭ThickBox。</li>
+			</ul>
+			<h5>重点提醒:</h5>
+			<p>所有其他参数字符都必须在TB_iframe 参数之前。URL中所有"TB" 之后的将被移除。</p>
+		</div>
+		<div class="anchor">
+			<p>
+				<a href="text/ajax_ifram.html?keepThis=true&amp;TB_iframe=true&amp;height=250&amp;width=400" title="添加一个标题”title”属性 / 或空白" class="thickbox">例子1</a>
+				<a href="text/ajaxOverFlow.html?keepThis=true&amp;TB_iframe=true&amp;height=300&amp;width=500" title="添加一个标题”title”属性 / 或空白" class="thickbox">例子2</a>
+				<a href="text/iframeModal.html?placeValuesBeforeTB_=savedValues&amp;TB_iframe=true&amp;height=200&amp;width=300&amp;modal=true" title="添加一个标题”title”属性 / 或空白" class="thickbox">iFrame Modal被打开的演示</a>
+			</p>	
+		</div>
+		
+		<!--demo4 end-->
+		
+	
+		<h2>五、ajax 内容演示</h2>
+		<div class="anchor">
+			<h5>描述:</h5>
+			<p>采用一个隐藏的HTTP request (AJAX) 从同一个服务器上获取文件，并使用显示其内容。</p>
+			<h5>使用说明:</h5>
+			<ul>
+				<li>创建一个link元素 (&lt;a href&gt;)</li>
+				<li>给创建的这个link元素一个class属性，其值是：thickbox (class=&quot;thickbox&quot;)</li>
+				<li>给link元素的href属性指向一个链接文件或是服务器目录。(href=&quot;ajaxLogin.htm&quot;) </li>
+				<li>在href属性的URL后面追加以下字符来结束URL: <pre class="exampleCode"><code class="html">?height=300&amp;width=300</code></pre></li>
+				<li>根据需要更改宽和高的值。</li>
+				<li>当然，你也可以在上面的参数字符串再加上modal=true(比如. ?height=300&amp;width=300&amp;modal=true) 这样当关闭ThickBox时会调用ThickBox内部的一个tb_remove()函数。在演示中查看“login”这个例子则要求点击yes 或 no才能关闭ThickBox。</li>
+			</ul>
+			<h5>重点提醒:</h5>
+			<p>为了在新打开的Ajax ThickBox中打开新的Ajax内容，他的代码必须包含适当的 HTML (class=""thickbox) 来加载一个Ajax ThickBox (请留意演示例子)。其他唯一需要注意的一个地方就是调用的ThickBox必须包含宽和高，如果你给这两项留空，则窗口会自适应到默认大小（630*440）.</p>
+		</div>
+		<div class="anchor">
+			<p>
+				<a href="text/ajaxOverFlow.html?height=300&amp;width=400" title="添加一个标题”title”属性 / 或空白" class="thickbox">有滚动条的内容</a>
+				<a href="text/ajax.html?height=220&amp;width=400" class="thickbox" title="添加一个标题”title”属性 / 或空白">没滚动条的内容</a>
+				<a href="text/ajaxLogin.html?height=85&amp;width=250&amp;modal=true" class="thickbox" title="请签到">登入(模式)</a>
+				<a href="text/ajaxTBcontent.html?height=200&amp;width=300" class="thickbox" title="">更新ThickBox内容</a>
+			</p>
+		</div>
+		
+		<!--demo5 end-->
+	
+	
+	</div><!--pageContent end-->
+	
+</body>
+</html>

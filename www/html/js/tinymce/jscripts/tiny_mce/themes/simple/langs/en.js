@@ -1,0 +1,1 @@
+tinyMCE.addI18n('en.simple',{"cleanup_desc":"清除代码","redo_desc":"重做 (Ctrl+Y)","undo_desc":"撤销 (Ctrl+Z)","numlist_desc":"插入/移除数字列表","bullist_desc":"插入/删除符号列表","striketrough_desc":"删除线","underline_desc":"下划线 (Ctrl+U)","italic_desc":"斜体 (Ctrl+I)","bold_desc":"加粗 (Ctrl+B)"});

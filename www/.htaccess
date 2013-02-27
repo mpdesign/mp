@@ -1,0 +1,10 @@
+RewriteEngine on
+
+RewriteRule    ^css/(.+)$ html/css/$1 [QSA,L]
+RewriteRule    ^js/(.+)$ html/js/$1 [QSA,L]
+RewriteRule    ^images/(.+)$ html/images/$1 [QSA,L]
+RewriteRule    ^file/(.+)$ html/file/$1 [QSA,L]
+RewriteRule    ^(?!html/)(.+)$ index.php?_u=$1  [QSA,L]
+#error_page  404   /system/page_404.Htm;
+#!-e
+
