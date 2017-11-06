@@ -1,0 +1,130 @@
+#!/bin/bash
+################################################################################
+#
+# This is a shell script for running MPPHP script
+# PHP versions 4 and 5
+#
+# Power by Mpdesign 
+# date 2013-03-25
+################################################################################
+
+LIB=${0/%mp/}
+HELP=""
+
+
+
+if [ "$LIB" == "./" ];then
+        LIB=`pwd`
+        LIB=${LIB}/
+fi
+
+PCOUNT=1
+while [ $# -gt 0 ]; do  
+    case $1 in  
+        -l)  
+            PCOUNT=$2  
+            break  
+            ;; 
+        *)
+            break
+        	;;
+    esac
+ 
+done 
+
+PCOMMOND="php -q ${LIB}mp.php $@"
+
+
+
+
+
+#make args array
+#i=1
+#for arg in $@;do
+#	if [ $i -gt $# ];then
+#		break
+#	fi
+#	sy[$i]=$arg
+#	((i++))
+
+#done
+
+#start or stop app
+s_action="$1"
+s_app="$2"
+
+if [ "$s_action" == "stop" ];then
+if [ "$s_app" != "" -a "$s_app" != " " ];then
+	PRO_NOW=`ps -ef | grep "$s_app" | grep -v grep | grep -v "$s_action" | wc -l`
+	
+	if [ $PRO_NOW -gt 0 ];then
+		ps -ef | grep "$s_app" | grep -v grep | grep -v "$s_action" | awk '{print $2}' | xargs kill -9
+	fi
+	echo "stoped ..."
+	exit 0
+	
+fi
+fi	
+
+#listen 
+
+PRO_PATH=""
+
+while true ; do
+	ymd=$(date +%Y%m%d)
+	PLOG="/data2/logs/web/syapi/mp${ymd}.log"
+    PRO_NOW=`ps aux | grep "$PCOMMOND" | grep -v grep | wc -l`
+	
+
+    if [ $PRO_NOW -lt $PCOUNT ]; then
+    
+		if [ $PRO_NOW -gt 0 ]; then
+			echo "stoped ..."
+			ps -ef | grep "$PCOMMOND" | grep -v grep | awk '{print $2}' | xargs kill -9
+		fi
+		
+		echo "starting ..."
+		sleep 2
+    	
+		date >> $PLOG
+		echo "$PCOMMOND" >> $PLOG
+		for((i=1;i<=$PCOUNT;i++));do 
+			#PRETURN=`$PCOMMOND`
+			#if [ $PRETURN == "invalidCommand" ];then
+			#	echo "$PCOMMOND is Invalid Command, exit."
+			#	exit 0
+			#fi
+			#echo $PRETURN >> $PLOG  &
+			$PCOMMOND >> $PLOG  &
+			
+		done
+		
+		echo "started ..."
+
+
+    fi
+
+	sleep 10
+
+	# 基本与上面的相同，就是多了一个 grep T，其结果为过滤出含 T 字符的信息行
+	# T --> 进程已停止，D --> 不可中断的深度睡眠，R --> 进程运行或就绪，S --> 可接收信号的睡眠，
+	# X --> 已完全死掉，Z --> 已完全终止
+
+    #PRO_STAT=`ps aux|grep "$PCOMMOND" |grep T|grep -v grep|wc -l`
+
+
+    #if [ $PRO_STAT -gt 0 ] ; then
+
+    #    ps -ef | grep "$PCOMMOND" | grep -v grep | awk '{print $2" "$3}' | xargs kill -9
+    #    sleep 2
+    #    date >> $PLOG
+    #    for((i=1;i<=$PCOUNT;i++));do 
+	#
+	#		$PCOMMOND >> $PLOG 1>&2 &
+	#		
+	#	done
+    #fi
+
+done
+
+exit 0
