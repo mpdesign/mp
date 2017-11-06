@@ -8,8 +8,8 @@
  * @package   Www
  +------------------------------------------------------------------------------
  */
-class index extends appController {
-	function execute() {
+class index extends homeController {
+	function Run() {
 		
 	}
 }
