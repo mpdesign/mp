@@ -10,7 +10,6 @@
  */
 
 class admin_index extends homeController {
-
-	 function Run() {
-   }
+  function Run() {
+  }
 }
