@@ -9,7 +9,7 @@
  +------------------------------------------------------------------------------
  */
 class index extends appController {
-	function execute() {
+	function Run() {
 		$this->assign('secs',3);
 		$this->assign('msg',"抱歉，找不到您要浏览的页面！");
 		$this->assign('url',"/");
